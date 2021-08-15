@@ -1,0 +1,1 @@
+wt -p "Command Prompt" -d e:\institution ; new-tab -p "Institution Angular Ng" -d e:\institution\institution_angular; split-pane -p "Institution Api Php" -d e:\institution\institution_api; new-tab -p "Institution Angular"; new-tab -p "Institution Project"

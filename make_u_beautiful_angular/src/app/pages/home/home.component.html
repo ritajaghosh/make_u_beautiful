@@ -1,0 +1,263 @@
+
+
+<mat-drawer-container class="example-container" autosize style="background-color: #bebebf;">
+    <mat-drawer #drawer  mode="side" opened="false" position="end">
+<!--        <button *ngIf="authService.isAuthenticated()" (click)="logout()" class="logout-button coder-fab"  mat-fab><i class="ri-shut-down-line"></i></button>-->
+<!--        <button *ngIf="authService.isAuthenticated()" [popover]="popoverCustomer"  class="logout-button coder-fab"  mat-fab><i class="ri-shut-down-line"></i></button>-->
+
+        <button *ngIf="authService.isAuthenticated()" [matMenuTriggerFor]="menuShutDown" class="logout-button coder-fab"  mat-fab><i class="ri-shut-down-line"></i></button>
+        <mat-menu #menuShutDown="matMenu" class="custom-menu">
+            <button mat-menu-item (click)="logoutAll()">Logout from All Devices<i class="ri-logout-box-r-fill"></i> </button>
+            <button mat-menu-item (click)="logout()">Logout from here <i class="ri-logout-circle-r-fill"></i> </button>
+        </mat-menu>
+        <a (click)="drawer.toggle()" class="menu-toggle rounded" [routerLink]=""><i class="bi bi-list" ></i></a>
+        <br><br><br>
+        <app-menu></app-menu>
+    </mat-drawer>
+
+    <a (click)="drawer.toggle()" class="menu-toggle rounded" [routerLink]=""><i class="bi bi-list" ></i></a>
+    <router-outlet></router-outlet>
+    <app-top></app-top>
+    <section id="test" class="pl-5" *ngIf="false">
+        <div class="box a" data-aos="fade-up">
+            <h2>Animated using fade-up.</h2>
+        </div>
+        <div class="box b" data-aos="flip-down">
+            <h2>Animated using flip-down.</h2>
+        </div>
+        <div class="box b" data-aos="zoom-in">
+            <h2>Animated using zoom-in.</h2>
+        </div>
+        <div class="about-text" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="200">Experiment is good</div>
+
+        <div class="item" data-aos="fade-up" data-aos-delay="800">1</div>
+        <div class="item" data-aos="fade-down" data-aos-delay="800">2</div>
+        <div class="item" data-aos="fade-right" data-aos-delay="800">3</div>
+        <div class="item" data-aos="fade-left" data-aos-delay="800">4</div>
+
+        <div class="item" data-aos="zoom-in" data-aos-delay="800">5</div>
+        <div class="item" data-aos="zoom-out" data-aos-delay="800">6</div>
+
+        <div class="item" data-aos="slide-up" data-aos-delay="800">7</div>
+
+        <div class="item" data-aos="flip-up" data-aos-delay="800">8</div>
+        <div class="item" data-aos="flip-down" data-aos-delay="800">9</div>
+        <div class="item" data-aos="flip-right" data-aos-delay="800">10</div>
+        <div class="item" data-aos="flip-left" data-aos-delay="800">11</div>
+    </section>
+    <app-why-us></app-why-us>
+    <app-features></app-features>
+    <app-popular-courses></app-popular-courses>
+    <section class="content-section bg-primary text-white text-center" id="services">
+        <div class="container px-4 px-lg-5">
+            <div class="content-section-heading">
+                <h3 class="text-secondary mb-0">Services</h3>
+                <h2 class="mb-5">What We Offer</h2>
+            </div>
+            <div class="row gx-4 gx-lg-5">
+                <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                    <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-screen-smartphone"></i></span>
+                    <h4><strong>Responsive</strong></h4>
+                    <p class="text-faded mb-0">Looks great on any screen size!</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                    <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-pencil"></i></span>
+                    <h4><strong>Redesigned</strong></h4>
+                    <p class="text-faded mb-0">Freshly redesigned for Bootstrap 5.</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+                    <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-like"></i></span>
+                    <h4><strong>Favorited</strong></h4>
+                    <p class="text-faded mb-0">
+                        Millions of users
+                        <i class="fas fa-heart"></i>
+                        Start Bootstrap!
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-mustache"></i></span>
+                    <h4><strong>Question</strong></h4>
+                    <p class="text-faded mb-0">I mustache you a question...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Callout-->
+    <section class="callout">
+        <div class="container px-4 px-lg-5 text-center">
+            <h2 class="mx-auto mb-5">
+                Welcome to
+                <em>your</em>
+                next website!
+            </h2>
+            <a class="btn btn-primary btn-xl" href="https://startbootstrap.com/theme/stylish-portfolio/">Download Now!</a>
+        </div>
+    </section>
+
+
+
+    <!-- ======= Trainers Section ======= -->
+    <app-trainer></app-trainer>
+
+    <!-- Portfolio-->
+    <section class="content-section" id="portfolio">
+        <div class="container px-4 px-lg-5">
+            <div class="content-section-heading text-center">
+                <h3 class="text-secondary mb-0">Portfolio</h3>
+                <h2 class="mb-5">Recent Projects</h2>
+            </div>
+            <div class="row gx-0">
+                <div class="col-lg-6">
+                    <a class="portfolio-item" href="#!">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <div class="h2">Stationary</div>
+                                <p class="mb-0">A yellow pencil with envelopes on a clean, blue backdrop!</p>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio-1.jpg" alt="..." />
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <a class="portfolio-item" href="#!">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <div class="h2">Ice Cream</div>
+                                <p class="mb-0">A dark blue background with a colored pencil, a clip, and a tiny ice cream cone!</p>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio-2.jpg" alt="..." />
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <a class="portfolio-item" href="#!">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <div class="h2">Strawberries</div>
+                                <p class="mb-0">Strawberries are such a tasty snack, especially with a little sugar on top!</p>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio-3.jpg" alt="..." />
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <a class="portfolio-item" href="#!">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <div class="h2">Workspace</div>
+                                <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio-4.jpg" alt="..." />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section bg-primary text-white">
+        <div class="container px-4 px-lg-5 text-center">
+            <h2 class="mb-4">The buttons below are impossible to resist...</h2>
+            <a class="btn btn-xl btn-light me-4" href="#!">Click Me!</a>
+            <a class="btn btn-xl btn-dark" href="#!">Look at Me!</a>
+        </div>
+    </section>
+    <!-- Map-->
+    <div class="map" id="contact">
+        <iframe src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
+        <br />
+        <small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a></small>
+    </div>
+    <!-- Footer-->
+    <footer class="footer text-center">
+        <div class="container px-4 px-lg-5">
+            <ul class="list-inline mb-5">
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="icon-social-facebook"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="icon-social-twitter"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white" href="#!"><i class="icon-social-github"></i></a>
+                </li>
+            </ul>
+            <p class="text-muted small mb-0">Copyright &copy; Your Website 2021</p>
+        </div>
+    </footer>
+    <footer id="footer">
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h3>Mentor</h3>
+                        <p>
+                            25(10/A)<br>
+                            Shibtala, Nonachandanpukur<br>
+                            Barackpore<br><br>
+                            <strong>Phone:</strong> +91 70037 56860<br>
+                            <strong>Email:</strong> sukantahui@gmail.com<br>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 footer-newsletter">
+                        <h4>Join Our Newsletter</h4>
+                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+                        <form action="" method="post">
+                            <input type="email" name="email"><input type="submit" value="Subscribe">
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container d-md-flex py-4">
+
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                    &copy; Copyright <strong><span>Mentor</span></strong>. All Rights Reserved
+                </div>
+                <div class="credits">
+                    <!-- All the links in the footer should remain intact. -->
+                    <!-- You can delete the links only if you purchased the pro version. -->
+                    <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/ -->
+                    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="https://twitter.com/sukantahui" class="twitter" target="_blank"><i class="bx bxl-twitter"></i></a>
+                <a href="https://www.facebook.com/sukantahui" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
+                <a href="https://www.instagram.com/sukantahui/" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus" target="_blank"><i class="bx bxl-skype"></i></a>
+                <a href="https://www.linkedin.com/in/sukanta-hui-56790931/" class="linkedin" target="_blank"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</mat-drawer-container>
